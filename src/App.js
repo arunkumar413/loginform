@@ -13,7 +13,7 @@ export default function App() {
   }
 
   async function handleLogin() {
-    let res = await fetch('https://localhost:3000/login');
+    let res = await fetch('http://localhost:3000/login');
   }
 
   return (
