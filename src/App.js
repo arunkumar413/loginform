@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 
 export default function App() {
-  const [userName, setUserName] = useState('');
-  const [password, setPassword] = useState('');
+  const [userName, setUserName] = useState("");
+  const [passWord, setPassword] = useState("");
 
   function handleUserName(evt) {
     setUserName(evt.target.value);
@@ -13,7 +13,13 @@ export default function App() {
   }
 
   async function handleLogin() {
-    let res = await fetch('http://localhost:3000/login');
+    let res = await fetch("http://localhost:3000/login", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ username: userName, password: passWord }),
+    });
   }
 
   return (
